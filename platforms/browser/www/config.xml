@@ -1,14 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.player100regras" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>player100regras</name>
+    <name>player100Regras</name>
     <description>
-        Push sample application that receives push notifications.
+        Aplicativo player100Regras
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="jtiggerks@gmail.com" href="perfiljt.com.br">
+        player100Regras
     </author>
     <content src="index.html" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+    <gap:plugin name="onesignal-cordova-plugin" source="npm" spec="^2.1.1" />
     <access origin="*" />
+    <access origin="*.onesignal.com" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -16,8 +22,14 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="15" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#ee6e73" />
+    <preference name="StatusBarBackgroundColor" value="#1bb394" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="7000" />
+    <preference name="android-build-tool" value="gradle" />
 </widget>
