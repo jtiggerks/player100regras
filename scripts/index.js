@@ -39,14 +39,18 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-            
-           /* $('#iddevice').val(device.uuid);
-            srcframe =$('#iframe_view').attr('src');
-            urlfull = srcframe + $('#iddevice').val();
-           
-            $('#iframe_view').attr('src',urlfull);*/
- 
-     
+          var urlfull= 'http://www.player100regras.com.br?p=1&u=';
+          alert(urlfull+device.uuid);
+          window.open(urlfull+device.uuid, '_self');   
+          var notificationOpenedCallback = function(jsonData) {
+            //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+          };
+
+          window.plugins.OneSignal
+            .startInit("5ceca4b1-0b62-4faf-82eb-6c4bd2f6166f")
+            .handleNotificationOpened(notificationOpenedCallback)
+            .endInit();
+
 
           },
     // Update DOM on a Received Event
