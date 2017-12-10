@@ -39,8 +39,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-          var urlfull= 'http://www.player100regras.com.br?p=1&u=';
-          alert(urlfull+device.uuid);
+          var urlfull= 'http://www.player100regras.com.br?p=1&u=';        
           window.open(urlfull+device.uuid, '_self');   
           var notificationOpenedCallback = function(jsonData) {
             //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
