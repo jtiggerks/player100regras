@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.player100regras" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Player100Regras</name>
+    <name>player100Regras</name>
     <description>
-        Aplicativo Player100Regras
+        Aplicativo player100Regras
     </description>
     <author email="jtiggerks@gmail.com" href="perfiljt.com.br">
-        PhoneGap Team
+        player100Regras
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -17,6 +17,8 @@
 
  
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
+    
+    <plugin name="cordova-plugin-device" spec="https://github.com/apache/cordova-plugin-device.git#1.0.0" />
  
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <platform name="android">

@@ -1,44 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>100 Regras</title>
+    <title>ZEmerson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />    
-
-  
-    <script type="text/javascript" src="scripts/jquery.js"></script>  
-    <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
-    <link href="styles/jquery-ui.css"  rel="stylesheet" type="text/css">
-
-  
-<script type="text/javascript" src="scripts/index.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript">
-  app.initialize();
-</script>  
-
-
-    <script type="text/javascript" charset="utf-8">
-
-
-   
-    function sem_Conexao(e){
-    $("<div title='Sem conexão'></div>").dialog({
-       open: function(event, ui) { $(this).html('<span style="text-align:"center;">Conecte-se para utilizar esta função.</span>'); $(".ui-dialog-titlebar-close", ui.dialog | ui).hide(); },
-      show: { effect: "fade", duration: 300 },
-      buttons: [
-        {
-          text: "Fechar",
-          click: function() {
-           navigator.app.exitApp();    
-          }
-        }
-      ]
-    }); 
-    }
- 
-    </script>
 
   </head>
   <body>
@@ -66,10 +32,28 @@ iframe {
     position: absolute;
 }
   </style>
-  <div class="wrapper">
-         <iframe src="http://100regras.com.br" style="width:100%; height:100%;" allowfullscreen frameborder="0">
-  </div>
 
+
+ 
+  <script type="text/javascript" src="scripts/jquery.js"></script>  
+ 
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
+
+  <script type="text/javascript">
+     app.initialize(); 
+
+      $(function () {
+
+      
+
+      });
+
+  </script>  
+  <input type="hidden" id="iddevice" name="">
+  <div class="wrapper">
+         <iframe id="iframe_view" src="http://www.100regras.com.br?p=1&u=" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="width:100%; height:100%;" allowfullscreen frameborder="0">
+  </div>
 
   </body>
 </html>

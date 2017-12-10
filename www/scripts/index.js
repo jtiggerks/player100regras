@@ -20,6 +20,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+  
         this.bindEvents();
         
     },
@@ -38,9 +39,15 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-
+            
+            $('#iddevice').val(device.uuid);
+            srcframe =$('#iframe_view').attr('src');
+            urlfull = srcframe + $('#iddevice').val();
+            alert(urlfull);
+            $('#iframe_view').attr('src',urlfull);
+ 
           var notificationOpenedCallback = function(jsonData) {
-            console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+            //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
           };
 
           window.plugins.OneSignal
@@ -55,3 +62,6 @@ var app = {
         var parentElement = document.getElementById(id);
     }
 };
+
+                  
+   
