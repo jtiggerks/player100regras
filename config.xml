@@ -162,11 +162,13 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-     <allow-navigation href="http://viradinhado100.com.br/*" />
+    <allow-navigation href="http://viradinhado100.com.br/*" />
+    <allow-navigation href="http://www.viradinhado100.com.br/*" />
 
 
-    <access origin="http://viradinhado100.com.br//" />
-    <access origin="viradinhado100.com.br" />
+
+    <access origin="http://www.viradinhado100.com.br//" />
+    <access origin="www.viradinhado100.com.br" />
 
     <allow-intent href="http://*/*" />
     <allow-intent href="http://viradinhado100.com.br/" />
