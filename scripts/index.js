@@ -16,47 +16,61 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 var app = {
-    // Application Constructor
-    initialize: function() {
-  
-        this.bindEvents();
-        
+
+    initialize: function()
+    {
+        this.bindEvents(); 
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
+ 
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', this.onDeviceReady, false); 
+ 
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+ 
+    AdMob.createBanner({
+        adId : "ca-app-pub-4280395038077422/4698770521",
+        position : AdMob.AD_POSITION.BOTTOM_CENTER,
+        autoShow : true
+    });
+   
+    AdMob.prepareInterstitial({
+        adId:'ca-app-pub-6833525801886116/9945150358', 
+        autoShow:true
+    });
 
-          var urlfull= 'http://www.player100regras.com.br?p=1&u=';        
-          window.open(urlfull+device.uuid, '_self');   
-          var notificationOpenedCallback = function(jsonData) {
-            //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-          };
 
-          window.plugins.OneSignal
-            .startInit("5ceca4b1-0b62-4faf-82eb-6c4bd2f6166f")
-            .handleNotificationOpened(notificationOpenedCallback)
-            .endInit();
+    var notificationOpenedCallback = function(jsonData)
+    {          
+        var jsonstring = JSON.stringify(jsonData);
+        var jsonobject = JSON.parse(jsonstring);
+        URL_APP = jsonobject.notification.payload.additionalData.foo;
+
+        var urlfull= 'http://viradinhado100.com.br?p=1&u='+URL_APP+'&idd='+device.uuid;        
+        
+        location.href = urlfull+device.uuid;
+    };
+
+     window.plugins.OneSignal
+        .startInit("5ceca4b1-0b62-4faf-82eb-6c4bd2f6166f")
+        .handleNotificationOpened(notificationOpenedCallback)
+        .endInit(); 
 
 
-          },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
+ 
+    //AdMob.showBanner(AdMob.AD_POSITION.BOTTOM_CENTER);
+
+    app.receivedEvent('deviceready');
+
+    var urlfull= 'http://viradinhado100.com.br/?idd='+device.uuid;
+    location.href = urlfull;
+
+    },receivedEvent: function(id)
+    {
+
+       
     }
 };
-
                   
    
